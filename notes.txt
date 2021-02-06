@@ -1,0 +1,37 @@
+1) x64 and x86 architecture
+https://techterms.com/definition/x64
+
+2)asembly file can have extension .asm .s and .S
+https://stackoverflow.com/questions/10285410/what-are-s-files
+
+*)Website of NASM tutorial
+https://cs.lmu.edu/~ray/notes/nasmtutorial/
+
+3)CPU perfoms all its calculation with registers (which are variables stored
+inside CPU)
+//registers 16 bit
+https://www.youtube.com/watch?v=VNDNvm0UY8E
+//32 and 64 bits, using eax, rax, etc in 64bit architecture, zeroes top bytes,
+8 and 16 bytes, doesnt do that
+https://www.youtube.com/watch?v=Dh7GQ_joeE4
+
+4)Data types in assembly(only int and floats of diff sizes, and additional SIMD data-type), signed and usigned int
+https://www.youtube.com/watch?v=lqRSU70wlxM
+
+5)MOV, LEA - pointer,  NOP - no operation
+in 64 bit, memory is flat, so we store adresses in 64 bit registers
+https://www.youtube.com/watch?v=mKcWIA1vKOw
+
+6)add sub inc dec, be careful, inc and dec doesnt set carry flag
+https://www.youtube.com/watch?v=ehAJ_zqF0Y4
+
+7)Boolean
+https://www.youtube.com/watch?v=atb993QRkIw
+
+8)Shift, rotate and bit manipulation
+shl - left ;;; shr - right ;; zeros out, when goes to the end // cant shift 64
+5:26
+
+
+9)Flag registers, 
+

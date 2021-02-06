@@ -1,0 +1,7 @@
+CC = ld
+NAME = libasm.a
+
+all: $(NAME)
+
+$(NAME):
+	
