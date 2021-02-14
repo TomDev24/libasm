@@ -35,3 +35,5 @@ shl - left ;;; shr - right ;; zeros out, when goes to the end // cant shift 64
 
 9)Flag registers, 
 
+///another good playlist explaining NASM
+https://www.youtube.com/watch?v=BWRR3Hecjao&list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn&index=2
