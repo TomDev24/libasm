@@ -7,6 +7,7 @@ section .text
 ft_strcpy:
 	mov rax, rdi
 	mov rcx, -1
+	push rbx
 	xor rbx, rbx
 
 	.loop:
@@ -16,18 +17,5 @@ ft_strcpy:
 		;mov byte[rdi], byte[rsi] invalid
 	cmp byte[rsi + rcx], 0
 	jne .loop
-	ret
-
-_deb:
-	jmp _deb
-
-_exit:	
-	ret
-
-_mem_protect:
-	mov rax, 0x0a
-	mov rdi, rdi
-	mov rsi, 2		;memory adresses amount to give write permission 	
-	mov rdx, 0x2		;allow write to mem 	
-	syscall
+	pop rbx
 	ret

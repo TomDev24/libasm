@@ -6,7 +6,6 @@
 extern ft_strlen
 extern ft_strcpy	;make strcpy work
 extern malloc
-extern __errno_location
 
 section .text
 	global ft_strdup
@@ -16,10 +15,20 @@ ft_strdup:
 	push rdi
 	call ft_strlen		;len will be in rax
 	
+	inc rax
 	mov rdi, rax		;setting amout of byte for malloc	
 	call malloc wrt ..plt
-	
+	cmp rax, 0
+	je _error	
+
 	mov rdi, rax
-	pop rsi
+	pop rcx
+	mov r10, rsi
+	mov rsi, rcx
 	call ft_strcpy
+	mov rsi, r10
+	mov rdi, rcx
+	ret
+
+_error:
 	ret

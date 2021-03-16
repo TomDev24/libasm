@@ -5,6 +5,9 @@ section .text
 
 ft_strcmp:
 	xor rax, rax
+	push rbx
+	push rdi
+	push rsi
 	xor rbx, rbx	
 	.loop:
 		mov al, byte[rdi]
@@ -21,4 +24,7 @@ ft_strcmp:
 	jmp .loop
 
 _exit:
+	pop rsi
+	pop rdi
+	pop rbx
 	ret
