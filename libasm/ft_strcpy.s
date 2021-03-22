@@ -2,9 +2,9 @@
 ;https://stackoverflow.com/questions/16679478/what-does-the-usage-of-mprotect-as-an-asm-syscall-look-like-with-respect-to-it;
 
 section .text
-	global ft_strcpy	
+	global _ft_strcpy	
 
-ft_strcpy:
+_ft_strcpy:
 	mov rax, rdi
 	mov rcx, -1
 	push rbx

@@ -4,9 +4,9 @@
 ;https://docs.microsoft.com/ru-ru/cpp/build/x64-calling-convention?view=msvc-160
 ;whic registes should be saved
 section .text
-	global ft_strlen
+	global _ft_strlen
 
-ft_strlen:
+_ft_strlen:
 	push rdi
 	xor rax, rax	;setting our counter and return value to zero
 

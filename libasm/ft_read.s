@@ -1,24 +1,24 @@
 ;size_t	ft_read(int fd, void *buf, size_t count);
 
-extern __errno_location
+extern ___error
 
 section .text
-	global	ft_read
+	global	_ft_read
 
-ft_read:
-	xor rax, rax		;0 for read operation id in linux 	
-	mov rdi, rdi
-	mov rsi, rsi	
-	mov rdx, rdx
+_ft_read:
+	;xor rax, rax		;0 for read operation id in linux 	
+	mov 	rax, 0x2000003
+	;mov rdi, rdi
+	;mov rsi, rsi	
+	;mov rdx, rdx
 	syscall
-	cmp rax, 0
-	jl _error
+	jc _fin
 	ret	
 
-_error:
-	mov rcx, rax
-	neg rcx
-	call __errno_location wrt ..plt
-	mov [rax], rcx
-	mov rax, -1
+_fin:
+	mov r15, rax
+	push -1
+	call ___error ;wrt ..plt
+	mov [rax], r15
+	pop rax
 	ret

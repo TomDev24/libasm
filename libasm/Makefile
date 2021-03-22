@@ -1,5 +1,5 @@
 ASM = nasm
-FLAGS = -felf64
+FLAGS = -f macho64
 NAME = libasm.a
 SRCS = ft_strlen.s \
        ft_strcmp.s \

@@ -1,9 +1,9 @@
 ;int ft_strcmp(const char *s1, const char *s2)
 
 section .text
-	global ft_strcmp
+	global _ft_strcmp
 
-ft_strcmp:
+_ft_strcmp:
 	xor rax, rax
 	push rbx
 	push rdi

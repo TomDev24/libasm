@@ -9,25 +9,24 @@
 ;https://stackoverflow.com/questions/4017424/how-to-check-if-a-signed-integer-is-neg-or-pos
 ;and test showed me how to fix errno
 
-extern __errno_location
+extern ___error
 
 section .text
-        global ft_write
+        global _ft_write
 
-ft_write:
-        mov rax, 1		;write call id
+_ft_write:
+		mov 	rax, 0x2000004
         mov rdi, rdi		;rdi is first param with fd
         mov rsi, rsi		;rsi is second param void *buf
         mov rdx, rdx		;rdx amount to type
         syscall
-	cmp rax, 0
-	jl _error
+		jc _error
         ret			;rax is return val, and it seems its auto setted
 
 _error:
-	mov rcx, rax
-	neg rcx
-	call __errno_location wrt ..plt
-	mov [rax], rcx
-	mov rax, -1
+	mov r15, rax
+	push -1
+	call ___error ; wrt ..plt
+	mov [rax], r15
+	pop rax
 	ret
